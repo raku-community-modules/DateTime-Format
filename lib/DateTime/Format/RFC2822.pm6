@@ -1,6 +1,6 @@
-use DateTime::Format::Format;
+use DateTime::Format::Factory;
 
-class DateTime::Format::RFC2822 does DateTime::Format::Format;
+class DateTime::Format::RFC2822 does DateTime::Format::Factory;
 
 ## RFC2822
 ##
@@ -8,3 +8,4 @@ class DateTime::Format::RFC2822 does DateTime::Format::Format;
 ##
 
 method FORMAT { '%a, %d %b %Y %T %z'; }
+
