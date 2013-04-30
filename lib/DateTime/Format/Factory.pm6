@@ -1,4 +1,5 @@
-role DateTime::Format::Factory does Callable;
+## A Parent Class for Format objects.
+class DateTime::Format::Factory does Callable;
 
 use DateTime::Format;
 

@@ -1,6 +1,6 @@
 use DateTime::Format::Factory;
 
-class DateTime::Format::RFC2822 does DateTime::Format::Factory;
+class DateTime::Format::RFC2822 is DateTime::Format::Factory;
 
 ## RFC2822
 ##
