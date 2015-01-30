@@ -69,8 +69,8 @@ multi sub strftime (
         'l' => { (($dt.hour+23)%12+1).fmt('%2d') },
         'n' => { "\n" },
         'N' => { (($dt.second % 1)*1000000000).fmt('%09d') },
-        'p' => { ($dt.hour < 12) ?? 'am' !! 'pm' },
-        'P' => { ($dt.hour < 12) ?? 'AM' !! 'PM' },
+        'p' => { ($dt.hour < 12) ?? 'AM' !! 'PM' },
+        'P' => { ($dt.hour < 12) ?? 'am' !! 'pm' },
         'r' => { (($dt.hour+23)%12+1).fmt('%02d') ~ ':' ~
                   $dt.minute.fmt('%02d') ~ ':' ~ $dt.whole-second.fmt('%02d')
                   ~ (($dt.hour < 12) ?? 'am' !! 'pm') },
