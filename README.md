@@ -34,7 +34,7 @@ or any language you have added using one of the Localization libraries.
 
 Parse or Stringify a DateTime in the RFC 2822 format.
 
-```perl
+```raku
 
   my $ts = 'Tue, 30 Apr 2013 13:02:10 -0700';
   my $rfc = DateTime::Format::RFC2822.new();
@@ -55,7 +55,7 @@ DateTime::Format library. The languages will then be immediately usable.
 
  * DateTime::Format::Lang::FR -- French
 
-```perl
+```raku
 
   use DateTime::Format::Lang::FR;
   set-datetime-lang('fr');
