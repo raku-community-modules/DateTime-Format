@@ -1,5 +1,7 @@
 # DateTime::Format
 
+![Build Status](https://github.com/raku-community-modules/DateTime-Format/workflows/CI/badge.svg)
+
 ## Description
 
 Provides strftime(), strptime() (coming soon), and a few predetermined 
