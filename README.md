@@ -4,8 +4,8 @@
 
 ## Description
 
-Provides strftime(), strptime() (coming soon), and a few predetermined 
-formats for use with both. 
+Provides strftime(), strptime() (coming soon), and a few predetermined
+formats for use with both.
 
 It also comes with some localizations for month and day names.
 
@@ -13,11 +13,19 @@ It also comes with some localizations for month and day names.
 
 These are exported by ```use DateTime::Format```
 
-## strftime (Str $format, DateTime $dt, :$lang)
+## strftime (Str $format, DateTime $dt, :$lang, :$subseconds)
 
 Format the DateTime object using the format as specified in the string.
 
 If you don't specify the language, it uses the currently set default.
+
+If you want to specify the use of subseconds in the time display, set the
+subseconds argument to the precision you wish to use in significant digits.
+Setting subseconds to 'True' would be equivalent of using a subseconds value of
+1.
+
+For example: using a subseconds value of 3 would format 33.3145692 seconds as
+33.315
 
 ## strptime (Str $timestamp, Str $format, :$lang)
 
@@ -88,4 +96,3 @@ and I'll add you to the credits.
 ## License
 
 [Artistic License 2.0](http://www.perlfoundation.org/artistic_license_2_0)
-
