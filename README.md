@@ -89,6 +89,7 @@ DateTime::Format library. The languages will then be immediately usable.
  * [Timothy Totten](https://github.com/supernovus/)
  * [Carl Mäsak](https://github.com/masak/)
  * [Kodi Arfer](https://github.com/Kodiologist/)
+ * [Clifton Wood](https://github.com/Xliff/)
 
 Anyone I'm missing that may have contributed, feel free to contact supernovus,
 and I'll add you to the credits.
