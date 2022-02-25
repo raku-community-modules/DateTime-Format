@@ -1,5 +1,3 @@
-use v6;
-
 unit module DateTime::Format;
 
 ## Default list of Month names.
@@ -117,7 +115,7 @@ multi sub strftime (
 
     $format .= subst( /'%'(\dN|\w|'%')/, -> $/ { (%substitutions{~$0}
             // die "Unknown format letter '$0'").() }, :global );
-    return ~$format;
+    ~$format
 }
 
 ## Parse a string and return a DateTime, uses the same format strings
@@ -130,25 +128,27 @@ sub strptime ($string, $format, :$lang=$datetime-format-lang) is export {
 ## Returns the language-specific day name.
 sub day-name ($i, $lang) is export(:ALL) {
     # ISO 8601 says Monday is the first day of the week.
-    $day-names{$lang.lc}[$i - 1];
+    $day-names{$lang.lc}[$i - 1]
 }
 
 ## Returns the language-specific month name name.
 sub month-name ($i, $lang) is export(:ALL) {
-    $month-names{$lang.lc}[$i - 1];
+    $month-names{$lang.lc}[$i - 1]
 }
 
 ## Add month names.
 sub add-datetime-format-month-names ($lang, @defs) is export(:ALL) {
-    $month-names{$lang.lc} = @defs;
+    $month-names{$lang.lc} = @defs
 }
 
 ## Add day names.
 sub add-datetime-format-day-names ($lang, @defs) is export(:ALL) {
-    $day-names{$lang.lc} = @defs;
+    $day-names{$lang.lc} = @defs
 }
 
 ## Set the default language.
 sub set-datetime-format-lang ($lang) is export {
-    $datetime-format-lang = $lang.lc;
+    $datetime-format-lang = $lang.lc
 }
+
+# vim: expandtab shiftwidth=4

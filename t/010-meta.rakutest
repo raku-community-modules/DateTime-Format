@@ -1,7 +1,3 @@
-#!/usr/bin/env raku
-
-use v6;
-
 use Test;
 
 my Bool $got-test-meta = True;
@@ -22,7 +18,6 @@ BEGIN {
             exit;
         }
     }
-
 }
 
 plan 1;
@@ -34,6 +29,4 @@ else {
     skip "no Test::META skipping";
 }
 
-
-done-testing;
-# vim: expandtab shiftwidth=4 ft=raku
+# vim: expandtab shiftwidth=4

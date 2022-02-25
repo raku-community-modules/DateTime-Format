@@ -1,21 +1,32 @@
 {
-  "name"        : "DateTime::Format",
-  "version"     : "0.1.1",
-  "auth"        : "github:raku-community-modules",
-  "api"         : "1.0",
-  "perl"        : "6.*",
-  "raku"        : "6.*",
-  "description" : "strftime and other DateTime formatting libraries",
-  "depends"     : [ ],
-  "provides"    : {
-    "DateTime::Format"           : "lib/DateTime/Format.pm6",
-    "DateTime::Format::Factory"  : "lib/DateTime/Format/Factory.pm6",
-    "DateTime::Format::RFC2822"  : "lib/DateTime/Format/RFC2822.pm6",
-    "DateTime::Format::Lang::FR" : "lib/DateTime/Format/Lang/FR.pm6",
-    "DateTime::Format::Lang::PT" : "lib/DateTime/Format/Lang/PT.pm6",
-    "DateTime::Format::Lang::DE" : "lib/DateTime/Format/Lang/DE.pm6",
-    "DateTime::Format::Lang::BG" : "lib/DateTime/Format/Lang/BG.pm6"
+  "api": "1.0",
+  "auth": "zef:raku-community-modules",
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "strftime and other DateTime formatting libraries",
+  "license": "Artistic-2.0",
+  "meta-version": 1,
+  "name": "DateTime::Format",
+  "perl": "6.*",
+  "provides": {
+    "DateTime::Format": "lib/DateTime/Format.rakumod",
+    "DateTime::Format::Factory": "lib/DateTime/Format/Factory.rakumod",
+    "DateTime::Format::Lang::BG": "lib/DateTime/Format/Lang/BG.rakumod",
+    "DateTime::Format::Lang::DE": "lib/DateTime/Format/Lang/DE.rakumod",
+    "DateTime::Format::Lang::FR": "lib/DateTime/Format/Lang/FR.rakumod",
+    "DateTime::Format::Lang::NL": "lib/DateTime/Format/Lang/NL.rakumod",
+    "DateTime::Format::Lang::PT": "lib/DateTime/Format/Lang/PT.rakumod",
+    "DateTime::Format::RFC2822": "lib/DateTime/Format/RFC2822.rakumod"
   },
-  "source-url"    : "git://github.com/raku-community-modules/DateTime-Format.git",
-  "meta-version" : 1
+  "raku": "6.*",
+  "resources": [
+  ],
+  "source-url": "git://github.com/raku-community-modules/DateTime-Format.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.1.2"
 }

@@ -1,6 +1,7 @@
 # DateTime::Format
 
 ![Build Status](https://github.com/raku-community-modules/DateTime-Format/workflows/CI/badge.svg)
+[![Actions Status](https://github.com/raku-community-modules/DateTime-Format/workflows/test/badge.svg)](https://github.com/raku-community-modules/DateTime-Format/actions)
 
 ## Description
 
@@ -45,13 +46,11 @@ or any language you have added using one of the Localization libraries.
 Parse or Stringify a DateTime in the RFC 2822 format.
 
 ```raku
-
   my $ts = 'Tue, 30 Apr 2013 13:02:10 -0700';
   my $rfc = DateTime::Format::RFC2822.new();
   my $dt  = $rfc.parse($ts);
   my $dt2 = $dt.utc();
   say ~$dt2;                   ## Tue, 30 Apr 2013 20:02:10 +0000
-
 ```
 
 ## Localizations
@@ -66,7 +65,6 @@ DateTime::Format library. The languages will then be immediately usable.
  * DateTime::Format::Lang::FR -- French
 
 ```raku
-
   use DateTime::Format::Lang::FR;
   set-datetime-lang('fr');
 
@@ -75,7 +73,6 @@ DateTime::Format library. The languages will then be immediately usable.
   ## methods within a DateTime::Format::* subclass such as RFC2822.
   ## This overrides the language for a single call, rather than setting
   ## a default value.
-
 ```
 
 ## TODO
@@ -91,9 +88,14 @@ DateTime::Format library. The languages will then be immediately usable.
  * [Kodi Arfer](https://github.com/Kodiologist/)
  * [Clifton Wood](https://github.com/Xliff/)
 
-Anyone I'm missing that may have contributed, feel free to contact supernovus,
-and I'll add you to the credits.
+Anyone missing that may have contributed, feel free to create an issue to
+add you to the credits.
 
-## License
+COPYRIGHT AND LICENSE
+=====================
 
-[Artistic License 2.0](http://www.perlfoundation.org/artistic_license_2_0)
+Copyright 2013 - 2018 Timothy Totten
+
+Copyright 2019 - 2022 Raku Community
+
+This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.

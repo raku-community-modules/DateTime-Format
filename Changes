@@ -1,0 +1,7 @@
+Revision history for DateTime::Format
+
+{{$NEXT}}
+
+0.1.2  2022-02-25T12:10:16+01:00
+    - First version in the zef ecosystem
+    - Add localization for Dutch (NL)

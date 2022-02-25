@@ -1,12 +1,8 @@
-use v6;
-use Test;
-
-use lib 'lib';
-
-plan 4;
-
 use DateTime::Format;
 use DateTime::Format::Lang::FR;
+use Test;
+
+plan 4;
 
 # Try currently implemented strftime() formats
 my $g1 = DateTime.new(:year(1582), :month(10), :day(4),
@@ -30,3 +26,4 @@ set-datetime-format-lang('fr');
 
 is strftime($format, $g1), $need, 'strftime with fr lang as default';
 
+# vim: expandtab shiftwidth=4

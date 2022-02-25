@@ -1,11 +1,7 @@
-use v6;
+use DateTime::Format::RFC2822;
 use Test;
 
-use lib 'lib';
-
 plan 2;
-
-use DateTime::Format::RFC2822;
 
 my $rfc = DateTime::Format::RFC2822.new();
 
@@ -25,3 +21,4 @@ my $need2 = "Mon, 04 Oct 1582 21:02:03 +0000";
 my $g2 = $g1.utc;
 is ~$g2, $need2, 'RFC 2822 format with UTC'; #test 2
 
+# vim: expandtab shiftwidth=4
