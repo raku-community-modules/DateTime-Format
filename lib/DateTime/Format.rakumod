@@ -1,4 +1,4 @@
-unit module DateTime::Format:ver<0.1.3>:auth<zef:raku-community-modules>;
+unit module DateTime::Format:ver<0.1.4>:auth<zef:raku-community-modules>;
 
 ## Default list of Month names.
 ## Add more by loading DateTime::Format::Lang::* modules.

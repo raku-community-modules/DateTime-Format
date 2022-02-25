@@ -2,6 +2,9 @@ Revision history for DateTime::Format
 
 {{$NEXT}}
 
+0.1.4  2022-02-25T12:50:44+01:00
+    - Weekdays are not capitalized in Dutch
+
 0.1.3  2022-02-25T12:15:34+01:00
     - Fix versioning / tagging mixup, hopefully
 

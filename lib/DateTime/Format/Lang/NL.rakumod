@@ -17,13 +17,13 @@ add-datetime-format-month-names 'nl', <
   December
 >;
 add-datetime-format-day-names 'nl', <
-  Maandag
-  Dinsdag
-  Woensdag
-  Donderdag
-  Vrijdag
-  Zaterdag
-  Zondag
+  maandag
+  dinsdag
+  woensdag
+  donderdag
+  vrijdag
+  zaterdag
+  zondag
 >;
 
 # vim: expandtab shiftwidth=4
