@@ -45,10 +45,13 @@ multi sub strftime (
   Str      :$lang=$datetime-format-lang,
            :$subseconds                  is copy,
 ) is export {
-    $subseconds = 1 if $subseconds && $subseconds !~~ Int;
+    $subseconds   = 1 if $subseconds && $subseconds !~~ Int;
+    $subseconds //= 1;
 
     sub seconds {
-        $subseconds ?? $dt.second.fmt('%02.' ~ $subseconds ~ 'f')
+        my $ff = "\%0{ 2 + $subseconds.succ }." ~ $subseconds ~ 'f';
+
+        $subseconds ?? $dt.second.fmt($ff)
                     !! $dt.whole-second.fmt('%02d')
     }
 
@@ -86,7 +89,7 @@ multi sub strftime (
         'T' => { $dt.hour.fmt('%02d') ~ ':' ~ $dt.minute.fmt('%02d') ~ ':' ~ seconds },
         'u' => { ~ $dt.day-of-week.fmt('%d') },
         'w' => { ~ (($dt.day-of-week+6) % 7).fmt('%d') },
-        'x' => { $dt.year.fmt('%04d') ~ '-' ~ $dt.month.fmt('%02d') ~ '-' ~ $dt.day.fmt('%2d') },
+        'x' => { $dt.year.fmt('%04d') ~ '-' ~ $dt.month.fmt('%02d') ~ '-' ~ $dt.day.fmt('%02d') },
         'X' => { $dt.hour.fmt('%02d') ~ ':' ~ $dt.minute.fmt('%02d') ~ ':' ~ seconds },
         'y' => { ($dt.year % 100).fmt('%02d') },
         '%' => { '%' },
@@ -113,8 +116,17 @@ multi sub strftime (
         },
     ; ## End of %substitutions
 
-    $format .= subst( /'%'(\dN|\w|'%')/, -> $/ { (%substitutions{~$0}
-            // die "Unknown format letter '$0'").() }, :global );
+    $format .= subst(
+      /'%'(\dN|\w|'%')/,
+      -> $/ {
+        (
+          %substitutions{~$0}
+            //
+          die "Unknown format letter '$0' in { $format }"
+        ).()
+      },
+      :global
+    );
     ~$format
 }
 
