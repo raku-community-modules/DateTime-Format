@@ -2,7 +2,7 @@ use DateTime::Format;
 use DateTime::Format::Lang::FR;
 use Test;
 
-plan 4;
+plan 5;
 
 # Try currently implemented strftime() formats
 my $g1 = DateTime.new(:year(1582), :month(10), :day(4),
@@ -10,14 +10,17 @@ my $g1 = DateTime.new(:year(1582), :month(10), :day(4),
 
 my $format = '%Y/%m/%d %H:%M:%S %C%e %I=%k%l%t%3N%p %a,%F%%.%n';
 my $need = "1582/10/04 13:02:03 15 4 01=13 1\t654PM Mon,1582-10-04%.\n";
-is strftime($format, $g1), $need, 'first strftime'; # test 1
+is strftime($format, $g1), $need, 'first strftime';
+
+$need = "1582/10/04 13:02:03.654 15 4 01=13 1\t654PM Mon,1582-10-04%.\n";
+is strftime($format, $g1, :3subseconds), $need, 'first strftime with subseconds';
 
 $g1 = DateTime.new(:year(1), :month(2),  :day(3),
                    :hour(4), :minute(5), :second(6.987654) );
 
 $format = '%I %6N %A %b=%B';
 $need = "04 987654 Saturday Feb=February";
-is strftime($format, $g1), $need, 'second strftime'; # test 2
+is strftime($format, $g1), $need, 'second strftime';
 
 $need = "04 987654 samedi fév=février";
 is strftime($format, $g1, :lang<fr>), $need, 'strftime explicit fr lang';

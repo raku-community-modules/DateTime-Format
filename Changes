@@ -2,6 +2,10 @@ Revision history for DateTime::Format
 
 {{$NEXT}}
 
+0.1.5  2023-10-07T20:26:41+02:00
+    - Fixing subsecond formatting
+    - Now with working Github Actions workflow!
+
 0.1.4  2022-02-25T12:50:44+01:00
     - Weekdays are not capitalized in Dutch
 

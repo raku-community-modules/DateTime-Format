@@ -1,4 +1,4 @@
-unit module DateTime::Format:ver<0.1.4>:auth<zef:raku-community-modules>;
+unit module DateTime::Format:ver<0.1.5>:auth<zef:raku-community-modules>;
 
 ## Default list of Month names.
 ## Add more by loading DateTime::Format::Lang::* modules.
@@ -43,10 +43,9 @@ multi sub strftime (
   Str       $format                      is copy,
   DateTime  $dt                          =  DateTime.now,
   Str      :$lang=$datetime-format-lang,
-           :$subseconds                  is copy,
+           :$subseconds  is copy = 0,
 ) is export {
-    $subseconds   = 1 if $subseconds && $subseconds !~~ Int;
-    $subseconds //= 1;
+    $subseconds.=Int;
 
     sub seconds {
         my $ff = "\%0{ 2 + $subseconds.succ }." ~ $subseconds ~ 'f';
