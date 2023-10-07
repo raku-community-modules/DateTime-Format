@@ -1,6 +1,5 @@
 # DateTime::Format
 
-![Build Status](https://github.com/raku-community-modules/DateTime-Format/workflows/CI/badge.svg)
 [![Actions Status](https://github.com/raku-community-modules/DateTime-Format/workflows/test/badge.svg)](https://github.com/raku-community-modules/DateTime-Format/actions)
 
 ## Description
