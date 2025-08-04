@@ -1,6 +1,7 @@
 {
   "api": "1.0",
   "auth": "zef:raku-community-modules",
+  "authors": [ "Timothy Totten", "Carl Mäsak", "Kodi Arfer", "Clifton Wood" ],
   "build-depends": [
   ],
   "depends": [
@@ -9,7 +10,8 @@
   "license": "Artistic-2.0",
   "meta-version": 1,
   "name": "DateTime::Format",
-  "perl": "6.*",
+  "perl": "6.d",
+  "raku": "6.d",
   "provides": {
     "DateTime::Format": "lib/DateTime/Format.rakumod",
     "DateTime::Format::Factory": "lib/DateTime/Format/Factory.rakumod",
@@ -24,7 +26,12 @@
   "resources": [
   ],
   "source-url": "git://github.com/raku-community-modules/DateTime-Format.git",
-  "tags": [
+  "support": {
+    "bugtracker": "https://github.com/raku-community-moduled/DateTime-Format/issues",
+    "email": "community@raku.org",
+    "source": "git://github.com/raku-community-modules/DateTime-Format.git"
+  },
+  "tags": [ "DATETIME", "strftime"
   ],
   "test-depends": [
   ],
